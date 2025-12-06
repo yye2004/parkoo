@@ -27,6 +27,15 @@ Endpoints:
 - `GET /availability` sample availability snapshot
 - `GET /health` health check
 
+## Deploying backend to Vercel (serverless)
+Vercel config is in `vercel.json` and `backend/api/index.ts` (serverless wrapper).
+Steps:
+1) Push to GitHub.
+2) In Vercel, “Import Project” and pick this repo.
+3) Set root as repo root (Vercel will auto-detect `vercel.json`).
+4) Add env vars: `JWT_SECRET`, `JWT_REFRESH_SECRET` (and anything else you need). Vercel sets `PORT` internally; no need to override.
+5) Deploy. Vercel gives you a public URL; use it in the mobile app via `EXPO_PUBLIC_API_BASE_URL`.
+
 ## Mobile quickstart (Expo)
 ```bash
 cd mobile
